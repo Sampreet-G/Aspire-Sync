@@ -37,8 +37,8 @@ function AnimatedCounter({ finalValue, duration = 2000 }) {
             if (progress < 1) {
               window.requestAnimationFrame(step);
             } else {
-                // Ensure it ends on the exact value
-                setCount(end);
+              // Ensure it ends on the exact value
+              setCount(end);
             }
           };
           window.requestAnimationFrame(step);
@@ -71,31 +71,31 @@ function Testimonials() {
     {
       quote: "Aspire Sync completely changed my college search game! I was so overwhelmed with hundreds of options, but their college finder narrowed it down to 5 perfect matches. Got into my top choice with a scholarship!",
       author: "Dr. Emily Rodriguez",
-      role: "Research Director",
+      role: "Student, J&K",
       img: "https://i.pravatar.cc/150?img=1"
     },
     {
       quote: "The career quiz blew my mind! I thought I wanted to be a doctor, but it showed me UX design - something I'd never heard of. Now I'm pursuing it and absolutely loving every moment of learning.",
       author: "Sarah Williams",
-      role: "Sustainability Consultant",
+      role: "Student, WB",
       img: "https://i.pravatar.cc/150?img=2"
     },
     {
       quote: "I was totally lost about my major until I found Aspire Sync. The resources section has everything - from career guides to interview prep. Just landed my first internship at a startup!",
       author: "David Kim",
-      role: "Operations Director",
+      role: "Student, UP",
       img: "https://i.pravatar.cc/150?img=3"
     },
     {
       quote: "As a first-generation college student, I had no idea where to start. This platform walked me through everything step by step. The course recommendations are spot-on and actually fun to complete!",
       author: "Maria Garcia",
-      role: "Chief Operating Officer",
+      role: "Student, MH",
       img: "https://i.pravatar.cc/150?img=4"
     },
     {
       quote: "The team's dedication and passion for their work is evident in the final product. Highly recommended.",
       author: "Johnathan Chen",
-      role: "Lead Engineer",
+      role: "Teacher, WB",
       img: "https://i.pravatar.cc/150?img=5"
     }
   ];
@@ -164,67 +164,53 @@ export default function Home() {
           </div>
         </div>
 
-{/* Roadmap Section */}
-      <div className="roadmap">
-        <div className="roadmap-step">
-          <img src="/assets/student.png" alt="Student icon for quiz step" />
-          <span>Take quiz</span>
-        </div>
-        <div className="roadmap-step2">
-          <img src="/assets/tpp.png" alt="arrow" />
-        </div>
-        <div className="roadmap-step">
-          <img src="/assets/roadmap.png" alt="Pathway icon for courses step" />
-          <span>Get courses</span>
-        </div>
-        <div className="roadmap-step2">
-          <img src="/assets/tpp.png" alt="arrow" />
-        </div>
-        <div className="roadmap-step">
-          <img src="/assets/trophy.png" alt="Trophy icon for college step" />
-          <span>Find college</span>
-        </div>
-      </div>
-
-      {/* Features Section */}
-      <div className="features">
-        <FeatureCard
-          image="/assets/hstudent.png"
-          title="Career Quiz"
-          desc="Find your best-fit career in 5 mins."
-          cta="Career Quiz"
-          href="/quiz"
-        />
-        <FeatureCard
-          image="/assets/roadmap.png"
-          title="Courses & Careers"
-          desc="Explore pathways to success now."
-          cta="Courses & Careers"
-          href="/courses"
-        />
-        <FeatureCard
-          image="/assets/trophy.png"
-          title="College Finder"
-          desc="Get the right college for your rank."
-          cta="College Finder"
-          href="/college"
-        />
-      </div>
-      {/* Your existing hero section */}
-        <div className="hero">
-          {/* Your existing hero content */}
-        </div>
-
-        {/* Your existing roadmap section */}
+        {/* Roadmap Section */}
         <div className="roadmap">
-          {/* Your existing roadmap content */}
+          <div className="roadmap-step">
+            <img src="/assets/student.png" alt="Student icon for quiz step" />
+            <span>Take quiz</span>
+          </div>
+          <div className="roadmap-step2">
+            <img src="/assets/tpp.png" alt="arrow" />
+          </div>
+          <div className="roadmap-step">
+            <img src="/assets/roadmap.png" alt="Pathway icon for courses step" />
+            <span>Get courses</span>
+          </div>
+          <div className="roadmap-step2">
+            <img src="/assets/tpp.png" alt="arrow" />
+          </div>
+          <div className="roadmap-step">
+            <img src="/assets/trophy.png" alt="Trophy icon for college step" />
+            <span>Find college</span>
+          </div>
         </div>
 
-        {/* Your existing features section */}
+        {/* Features Section */}
         <div className="features">
-          {/* Your existing features content */}
+          <FeatureCard
+            image="/assets/hstudent.png"
+            title="Career Quiz"
+            desc="Find your best-fit career in 5 mins."
+            cta="Career Quiz"
+            href="/quiz"
+          />
+          <FeatureCard
+            image="/assets/roadmap.png"
+            title="Courses & Careers"
+            desc="Explore pathways to success now."
+            cta="Courses & Careers"
+            href="/courses"
+          />
+          <FeatureCard
+            image="/assets/trophy.png"
+            title="College Finder"
+            desc="Get the right college for your rank."
+            cta="College Finder"
+            href="/college"
+          />
         </div>
-    </section>
+      </section>
       
       {/* New Testimonials Section Added Here */}
       <Testimonials />

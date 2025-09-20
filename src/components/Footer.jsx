@@ -50,7 +50,8 @@ export default function Footer() {
           <div className="footer-column">
             <h3>Social Media</h3>
             <nav className="footer-nav">
-              <a href="#">LinkedIn</a>
+              {/* --- THIS IS THE UPDATED LINK --- */}
+              <a href="https://www.linkedin.com/in/sampreetghosh/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               <a href="#">Facebook</a>
               <a href="#">Instagram</a>
               <a href="#">Twitter</a>
