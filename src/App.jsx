@@ -1,4 +1,4 @@
-// Updated App.jsx with Roadmap route
+// Updated App.jsx with Fixed Navbar Placement
 
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -21,16 +21,17 @@ import FAQ from "./pages/FAQ";
 export default function App() {
   return (
     <Router>
+      {/* Navbar placed OUTSIDE app-container so it's independent */}
+      <Navbar />
+
       <div className="app-container">
-        <Navbar />
-        
         <main className="content-container">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/college" element={<CollegeFinder />} />
             <Route path="/courses" element={<Courses />} />
             <Route path="/quiz" element={<Quiz />} />
-            <Route path="/roadmap" element={<Roadmap />} /> {/* New route */}
+            <Route path="/roadmap" element={<Roadmap />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />

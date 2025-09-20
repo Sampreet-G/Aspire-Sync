@@ -17,10 +17,10 @@ const teamMembers = [
   {
     id: 2,
     name: 'Sampreet Ghosh',
-    role: 'Frontend Developer',
+    role: 'Frontend and AI Developer',
     image: '👨‍💻',
-    bio: 'Sampreet Ghosh is a talented third-year Computer Science and Engineering (CSE) student serving as the frontend developer for our team. With a keen eye for design and a passion for creating seamless user experiences, he\'s responsible for bringing our vision to life on the web.',
-    specialties: ['React.js', 'UI/UX Design', 'Web Development'],
+    bio: 'Sampreet Ghosh is a talented third-year CSE student serving as the frontend and AI developer for our team. With a keen eye for design and a passion for creating seamless user experiences, he not only builds intuitive interfaces but also introduced AI integration into our project. As the driving force behind our web development, he is the main reason our vision has come to life on the web.',
+    specialties: ['React.js', 'UI/UX Design', 'FrontEnd Development', 'AI Integration'],
     education: 'Computer Science and Engineering',
     contact: 'sampreetghosh.cse2023@nsec.ac.in'
   },
@@ -37,10 +37,10 @@ const teamMembers = [
   {
     id: 4,
     name: 'Samyo Ghosh',
-    role: 'AI/ML Developer',
+    role: 'AI/ML Research Specialist',
     image: '🤖',
-    bio: 'Samyo Ghosh is responsible for integrating AI into the project. His expertise in artificial intelligence is key to developing the smart features for our solution.',
-    specialties: ['Artificial Intelligence', 'Machine Learning', 'AI Integration'],
+    bio: 'Samyo Ghosh is responsible for the research work of integrating AI into the project. His expertise in artificial intelligence is key to developing the smart features for our solution.',
+    specialties: ['AI/ML Research', 'AI Integration Research'],
     education: 'Computer Science and Engineering',
     contact: 'samyoghosh.cse2023@nsec.ac.in'
   },

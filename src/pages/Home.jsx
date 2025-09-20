@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 // Removed 'Link' as we use standard 'a' tags for this self-contained example
 import './Home.css';
+import AspireSyncChatbot from '../components/AspireSyncChatbot';
 
 // --- Reusable Feature Card Component ---
 function FeatureCard({ title, desc, cta, image, href }) {
@@ -209,10 +210,25 @@ export default function Home() {
           href="/college"
         />
       </div>
+      {/* Your existing hero section */}
+        <div className="hero">
+          {/* Your existing hero content */}
+        </div>
+
+        {/* Your existing roadmap section */}
+        <div className="roadmap">
+          {/* Your existing roadmap content */}
+        </div>
+
+        {/* Your existing features section */}
+        <div className="features">
+          {/* Your existing features content */}
+        </div>
     </section>
       
       {/* New Testimonials Section Added Here */}
       <Testimonials />
+      <AspireSyncChatbot />
     </>
   );
 }
