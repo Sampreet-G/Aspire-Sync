@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { MessageCircle, Send, X, Bot, User, Sparkles, BookOpen, GraduationCap, Award, Lightbulb, Settings, AlertCircle, Minimize2 } from 'lucide-react';
+import { MessageCircle, Send, X, Bot, User, Sparkles, BookOpen, GraduationCap, Award, Lightbulb, Minimize2 } from 'lucide-react';
 
 // Gemini AI Service
 class GeminiAIService {
@@ -136,166 +136,6 @@ Remember: You're helping students make life-changing educational decisions. Be t
   }
 }
 
-// API Key Configuration Component
-const APIKeyConfig = ({ onSave, currentKey, isOpen, onClose }) => {
-  const [apiKey, setApiKey] = useState(currentKey || '');
-  const [isLoading, setIsLoading] = useState(false);
-
-  const validateAndSave = async () => {
-    if (apiKey.length > 20) {
-      setIsLoading(true);
-      try {
-        onSave(apiKey);
-        onClose();
-      } catch (error) {
-        alert('Please check your API key and try again.');
-      } finally {
-        setIsLoading(false);
-      }
-    }
-  };
-
-  if (!isOpen) return null;
-
-  return (
-    <div style={{ 
-      position: 'fixed', 
-      top: 0, 
-      left: 0, 
-      right: 0, 
-      bottom: 0, 
-      backgroundColor: 'rgba(0, 0, 0, 0.5)', 
-      display: 'flex', 
-      alignItems: 'center', 
-      justifyContent: 'center', 
-      zIndex: 10000,
-      backdropFilter: 'blur(5px)'
-    }}>
-      <div style={{ 
-        backgroundColor: 'white', 
-        borderRadius: '20px', 
-        padding: '32px', 
-        maxWidth: '450px', 
-        width: '100%', 
-        margin: '16px', 
-        boxShadow: '0 25px 50px rgba(0, 0, 0, 0.25)',
-        animation: 'slideIn 0.3s ease-out'
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
-          <div style={{ 
-            width: '48px', 
-            height: '48px', 
-            background: 'linear-gradient(135deg, #667eea, #764ba2)', 
-            borderRadius: '50%', 
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'center' 
-          }}>
-            <Settings size={24} style={{ color: 'white' }} />
-          </div>
-          <div>
-            <h3 style={{ fontWeight: 'bold', fontSize: '20px', margin: 0, color: '#1a202c' }}>Configure Aspire Sync AI</h3>
-            <p style={{ fontSize: '14px', color: '#718096', margin: 0 }}>Add your Gemini API key to enable intelligent responses</p>
-          </div>
-        </div>
-
-        <div style={{ marginBottom: '20px' }}>
-          <label style={{ 
-            display: 'block', 
-            fontSize: '14px', 
-            fontWeight: '600', 
-            color: '#2d3748', 
-            marginBottom: '8px' 
-          }}>
-            Google Gemini API Key
-          </label>
-          <input
-            type="password"
-            value={apiKey}
-            onChange={(e) => setApiKey(e.target.value)}
-            placeholder="Enter your Gemini API key..."
-            style={{ 
-              width: '100%', 
-              padding: '12px 16px', 
-              border: '2px solid #e2e8f0', 
-              borderRadius: '12px', 
-              fontSize: '14px', 
-              outline: 'none', 
-              boxSizing: 'border-box',
-              transition: 'border-color 0.2s ease'
-            }}
-            onFocus={(e) => e.target.style.borderColor = '#667eea'}
-            onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
-          />
-        </div>
-
-        <div style={{ 
-          backgroundColor: '#f7fafc', 
-          padding: '16px', 
-          borderRadius: '12px', 
-          marginBottom: '24px',
-          border: '1px solid #e2e8f0'
-        }}>
-          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-            <AlertCircle size={20} style={{ color: '#667eea', marginTop: '2px', flexShrink: 0 }} />
-            <div style={{ fontSize: '14px', color: '#2d3748' }}>
-              <p style={{ fontWeight: '600', margin: '0 0 8px 0' }}>How to get your API key:</p>
-              <ol style={{ margin: '4px 0', paddingLeft: '16px', lineHeight: '1.6' }}>
-                <li>Visit <strong>Google AI Studio</strong></li>
-                <li>Sign in with your Google account</li>
-                <li>Click "Create API Key"</li>
-                <li>Copy and paste it here</li>
-              </ol>
-              <p style={{ margin: '12px 0 0 0', fontSize: '12px', color: '#38a169', fontWeight: '500' }}>
-                ✅ Free tier: 60 requests per minute
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div style={{ display: 'flex', gap: '12px' }}>
-          <button
-            onClick={onClose}
-            disabled={isLoading}
-            style={{ 
-              flex: 1, 
-              padding: '12px 20px', 
-              color: '#4a5568', 
-              backgroundColor: '#f7fafc', 
-              border: '2px solid #e2e8f0', 
-              borderRadius: '12px', 
-              cursor: isLoading ? 'not-allowed' : 'pointer', 
-              fontSize: '14px',
-              fontWeight: '600',
-              transition: 'all 0.2s ease'
-            }}
-          >
-            Cancel
-          </button>
-          <button
-            onClick={validateAndSave}
-            disabled={!apiKey.trim() || isLoading}
-            style={{ 
-              flex: 1, 
-              padding: '12px 20px', 
-              background: apiKey.trim() && !isLoading ? 'linear-gradient(135deg, #667eea, #764ba2)' : '#a0aec0', 
-              color: 'white', 
-              border: 'none', 
-              borderRadius: '12px', 
-              cursor: (apiKey.trim() && !isLoading) ? 'pointer' : 'not-allowed', 
-              fontSize: '14px',
-              fontWeight: '600',
-              transition: 'all 0.2s ease'
-            }}
-          >
-            {isLoading ? 'Saving...' : 'Save & Enable AI'}
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 // Main Chatbot Component
 const AspireSyncChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -304,8 +144,6 @@ const AspireSyncChatbot = () => {
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [suggestions, setSuggestions] = useState([]);
-  const [apiKey, setApiKey] = useState('');
-  const [showConfig, setShowConfig] = useState(false);
   const [aiService, setAiService] = useState(null);
   const [conversationContext, setConversationContext] = useState('');
   const [hasNewMessage, setHasNewMessage] = useState(false);
@@ -313,8 +151,9 @@ const AspireSyncChatbot = () => {
   
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 
-  // Create portal container on mount
+  // Create portal container and initialize AI service on mount
   useEffect(() => {
     const container = document.createElement('div');
     container.id = 'chatbot-portal';
@@ -330,12 +169,16 @@ const AspireSyncChatbot = () => {
     document.body.appendChild(container);
     setPortalContainer(container);
 
+    if (apiKey) {
+      setAiService(new GeminiAIService(apiKey));
+    }
+
     return () => {
       if (container && document.body.contains(container)) {
         document.body.removeChild(container);
       }
     };
-  }, []);
+  }, [apiKey]);
 
   // Enhanced initial suggestions
   const initialSuggestions = [
@@ -346,37 +189,7 @@ const AspireSyncChatbot = () => {
     { text: "What skills do software engineers need today?", icon: Sparkles },
     { text: "Tell me about emerging careers in AI/ML", icon: Bot },
   ];
-
-  // Comprehensive fallback knowledge base
-  const fallbackKnowledgeBase = {
-    greeting: "👋 Hello! I'm your Aspire Sync AI assistant! To provide you with the most personalized and accurate guidance, I'd recommend configuring the AI integration. In the meantime, I can help with basic information about courses, careers, and colleges. What would you like to know?",
-    
-    courses: "🎓 I can help you explore various courses! Popular options include:\n\n• **Engineering**: Computer Science, Mechanical, Electrical, AI/ML\n• **Medical**: MBBS, BDS, Pharmacy, Nursing\n• **Business**: BBA, MBA, Finance, Marketing, Data Analytics\n• **Arts**: Psychology, Literature, Political Science, Design\n• **Emerging Fields**: Cybersecurity, Renewable Energy, Biotechnology\n\nFor personalized recommendations based on your interests and aptitude, try our Career Quiz! 🚀",
-    
-    scholarships: "🏆 Here are some scholarship opportunities:\n\n• **Merit Scholarships**: For high academic performers\n• **Need-based Aid**: For economically disadvantaged students\n• **Category Scholarships**: SC/ST/OBC reservations\n• **Girl Child Education**: Special grants for female students\n• **INSPIRE**: For science students\n• **National Scholarships**: Central and state government schemes\n\nUse our scholarship finder tool for detailed information and application deadlines! 📅",
-    
-    careers: "💼 Career guidance is one of our specialties! Popular career paths include:\n\n• **Technology**: Software Engineer, Data Scientist, AI Engineer, Cybersecurity Analyst\n• **Healthcare**: Doctor, Pharmacist, Medical Researcher, Biotechnologist\n• **Business**: Marketing Manager, Financial Analyst, Consultant, Product Manager\n• **Creative**: UX/UI Designer, Content Creator, Digital Marketer\n• **Green Jobs**: Environmental Engineer, Sustainability Consultant\n\nTake our 5-minute Career Assessment Quiz for personalized recommendations! ✨",
-    
-    colleges: "🏛️ We can help you find the perfect college! Top categories:\n\n• **Engineering**: IITs, NITs, BITS, State Universities, Private Colleges\n• **Medical**: AIIMS, JIPMER, Government Medical Colleges\n• **Business**: IIMs, ISB, Private B-Schools, Delhi School of Economics\n• **General**: Central Universities, State Universities, Deemed Universities\n\nUse our College Finder tool to get recommendations based on your rank and preferences! 🎯"
-  };
-
-  // Load saved API key
-  useEffect(() => {
-    const savedApiKey = localStorage.getItem('aspireSyncApiKey');
-    if (savedApiKey) {
-      setApiKey(savedApiKey);
-      setAiService(new GeminiAIService(savedApiKey));
-    }
-  }, []);
-
-  // Initialize AI service
-  useEffect(() => {
-    if (apiKey) {
-      setAiService(new GeminiAIService(apiKey));
-      localStorage.setItem('aspireSyncApiKey', apiKey);
-    }
-  }, [apiKey]);
-
+  
   // Welcome message
   useEffect(() => {
     if (isOpen && messages.length === 0) {
@@ -405,7 +218,7 @@ const AspireSyncChatbot = () => {
         text, 
         sender: 'bot', 
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-        isAI: true // Always true since we have API key hardcoded
+        isAI: true
       }]);
       setIsTyping(false);
       
@@ -430,55 +243,10 @@ const AspireSyncChatbot = () => {
     return userMessage;
   };
 
-  const generateFallbackResponse = (userInput) => {
-    const input = userInput.toLowerCase();
-    let response = "";
-    let newSuggestions = [];
-
-    if (input.includes('course') || input.includes('study') || input.includes('degree') || input.includes('stream')) {
-      response = fallbackKnowledgeBase.courses;
-      newSuggestions = [
-        { text: "Tell me about engineering courses", icon: BookOpen },
-        { text: "Medical course requirements and fees", icon: Award },
-        { text: "What are the new-age courses?", icon: Sparkles },
-      ];
-    } else if (input.includes('scholarship') || input.includes('financial') || input.includes('funding')) {
-      response = fallbackKnowledgeBase.scholarships;
-      newSuggestions = [
-        { text: "Merit scholarship eligibility criteria", icon: Award },
-        { text: "How to apply for government scholarships", icon: BookOpen },
-      ];
-    } else if (input.includes('career') || input.includes('job') || input.includes('salary') || input.includes('placement')) {
-      response = fallbackKnowledgeBase.careers;
-      newSuggestions = [
-        { text: "Software engineering career roadmap", icon: Lightbulb },
-        { text: "Medical career opportunities and salary", icon: GraduationCap },
-      ];
-    } else if (input.includes('college') || input.includes('university') || input.includes('admission')) {
-      response = fallbackKnowledgeBase.colleges;
-      newSuggestions = [
-        { text: "Top engineering colleges in India", icon: GraduationCap },
-        { text: "Medical college admission process", icon: Award },
-      ];
-    } else if (input.includes('hello') || input.includes('hi') || input.includes('hey')) {
-      response = "Hello! 👋 Great to see you! I'm here to help with your educational journey. For the most personalized experience, consider enabling AI integration using the settings button. What can I help you with today? 🚀";
-      newSuggestions = initialSuggestions.slice(0, 4);
-    } else {
-      response = "I'd love to help you better! For more personalized and detailed guidance, consider enabling AI integration by clicking the settings icon ⚙️\n\nIn the meantime, I can help with:\n\n📚 Course information & career paths\n🏆 Scholarship details & deadlines\n💼 Basic career guidance & salary info\n🏛️ College information & admissions\n📝 Exam preparation tips\n\nWhat specific area interests you most? 🤔";
-      newSuggestions = initialSuggestions.slice(0, 3);
-    }
-
-    addBotMessage(response);
-    if (newSuggestions.length > 0) {
-      setTimeout(() => setSuggestions(newSuggestions), 1500);
-    }
-  };
-
   const generateAIResponse = async (userInput) => {
     try {
       setIsTyping(true);
       
-      // Add more detailed error logging
       console.log('Attempting to generate AI response for:', userInput);
       console.log('AI service configured:', !!aiService);
       
@@ -509,11 +277,9 @@ const AspireSyncChatbot = () => {
       console.error('Detailed AI Response Error:', error);
       console.error('Error message:', error.message);
       console.error('API Key exists:', !!apiKey);
-      console.error('API Key length:', apiKey?.length);
       
       setIsTyping(false);
       
-      // Provide more specific error messages
       let errorMessage = "⚠️ I'm having trouble connecting right now. ";
       
       if (error.message.includes('API key')) {
@@ -530,7 +296,6 @@ const AspireSyncChatbot = () => {
       
       addBotMessage(errorMessage, 500);
       
-      // Add some helpful suggestions for when AI fails
       setTimeout(() => {
         const fallbackSuggestions = [
           { text: "Tell me about engineering courses", icon: BookOpen },
@@ -549,7 +314,6 @@ const AspireSyncChatbot = () => {
     const userInput = inputValue;
     setInputValue('');
 
-    // Always use AI since we have the API key hardcoded
     generateAIResponse(userInput);
   };
 
@@ -557,7 +321,6 @@ const AspireSyncChatbot = () => {
     addUserMessage(suggestion.text);
     setSuggestions([]);
     
-    // Always use AI since we have the API key hardcoded
     generateAIResponse(suggestion.text);
   };
 
