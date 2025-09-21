@@ -43,48 +43,12 @@ A modern and interactive **College Finder Web Application** built with React, wh
 
 ---
 
-## ⚙️ Installation & Setup
-Navigate into the project
-
-cd college-finder
-
-
-Install dependencies
-
-npm install
-
-
-Run the development server
-
-npm start
-
-
-Open your browser at http://localhost:3000
-
-🤝 Contribution
-
-Contributions are welcome! If you’d like to improve the project:
-
-Fork the repo
-
-Create your feature branch (git checkout -b feature-name)
-
-Commit your changes (git commit -m 'Add some feature')
-
-Push to the branch (git push origin feature-name)
-
-Open a Pull Request 🎉
-
-📧 Contact
-
+## 📧 Contact
 For queries, suggestions, or collaborations:
+Developer: Sampreet Ghosh
+Email: ghosh.sampreet@gmail.com
 
-Developer: Sampreet
+---
 
-Email: your-email@example.com
+## ⭐ Don’t forget to star the repo if you like this project!
 
-⭐ Don’t forget to star the repo if you like this project!
-
-1. Clone this repository
-   ```bash
-   git clone https://github.com/your-username/college-finder.git
