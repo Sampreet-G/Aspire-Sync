@@ -1,12 +1,54 @@
-# React + Vite
+# 🎓 Aspire Sync
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and interactive **College Finder Web Application** built with React, where students can explore colleges in Jammu & Kashmir, search by name, filter by city, and view details. The platform also includes an **AI-powered chatbot** to guide users with queries.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
+🔗 [View Live Project]: https://aspiresync.netlify.app/
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📌 Features
+
+### 🔍 College Finder
+- Search colleges by **name**  
+- Filter colleges by **city**  
+- View **available courses**  
+- Smooth animations and responsive design  
+
+### 🤖 AI Chatbot
+- Instant **student support assistant**  
+- Answers queries about:
+  - Colleges
+  - Courses
+  - Admission guidance  
+- Built with **AI integration** for natural conversations  
+
+### 🌟 Testimonials
+- Showcases client/student feedback  
+- Interactive cards with hover effects  
+
+### 📱 Fully Responsive
+- Works seamlessly on **desktop, tablet, and mobile**  
+- Optimized with modern CSS animations  
+
+---
+
+## 🛠️ Tech Stack
+- **Frontend:** React.js, React Router  
+- **Styling:** CSS3 (custom animations, gradients, responsive grid)  
+- **AI Chatbot:** OpenAI API (or your chosen chatbot backend)  
+- **Deployment:** Vercel / Netlify  
+
+---
+
+## 📧 Contact
+For queries, suggestions, or collaborations:
+Developer: Sampreet Ghosh
+Email: ghosh.sampreet@gmail.com
+
+---
+
+## ⭐ Don’t forget to star the repo if you like this project!
+
