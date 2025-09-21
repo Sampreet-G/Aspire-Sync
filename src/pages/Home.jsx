@@ -70,33 +70,33 @@ function Testimonials() {
   const testimonialsData = [
     {
       quote: "Aspire Sync completely changed my college search game! I was so overwhelmed with hundreds of options, but their college finder narrowed it down to 5 perfect matches. Got into my top choice with a scholarship!",
-      author: "Dr. Emily Rodriguez",
+      author: "Anjali Mehta",
       role: "Student, J&K",
-      img: "https://i.pravatar.cc/150?img=1"
+      img: "https://i.pravatar.cc/150?img=45"
     },
     {
       quote: "The career quiz blew my mind! I thought I wanted to be a doctor, but it showed me UX design - something I'd never heard of. Now I'm pursuing it and absolutely loving every moment of learning.",
-      author: "Sarah Williams",
+      author: "Arijit Ghosh",
       role: "Student, WB",
-      img: "https://i.pravatar.cc/150?img=2"
+      img: "https://i.pravatar.cc/150?img=56"
     },
     {
       quote: "I was totally lost about my major until I found Aspire Sync. The resources section has everything - from career guides to interview prep. Just landed my first internship at a startup!",
-      author: "David Kim",
+      author: "Aman Verma",
       role: "Student, UP",
-      img: "https://i.pravatar.cc/150?img=3"
+      img: "https://i.pravatar.cc/150?img=59"
     },
     {
       quote: "As a first-generation college student, I had no idea where to start. This platform walked me through everything step by step. The course recommendations are spot-on and actually fun to complete!",
-      author: "Maria Garcia",
+      author: "Ravi Sharma",
       role: "Student, MH",
-      img: "https://i.pravatar.cc/150?img=4"
+      img: "https://i.pravatar.cc/150?img=58"
     },
     {
       quote: "The team's dedication and passion for their work is evident in the final product. Highly recommended.",
-      author: "Johnathan Chen",
+      author: "Simran Banerjee",
       role: "Teacher, WB",
-      img: "https://i.pravatar.cc/150?img=5"
+      img: "https://i.pravatar.cc/150?img=43"
     }
   ];
 

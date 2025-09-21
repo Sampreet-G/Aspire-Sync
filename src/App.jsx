@@ -9,8 +9,9 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import CollegeFinder from './pages/CollegeFinder';
 import Courses from './pages/Courses';
+import CourseDetails from './pages/CourseDetails'; // New import
 import Quiz from './pages/Quiz';
-import Roadmap from './pages/Roadmap'; // New import
+import Roadmap from './pages/Roadmap';
 import Resources from './pages/Resources';
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -30,6 +31,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/college" element={<CollegeFinder />} />
             <Route path="/courses" element={<Courses />} />
+            <Route path="/course-details/:courseId" element={<CourseDetails />} />
             <Route path="/quiz" element={<Quiz />} />
             <Route path="/roadmap" element={<Roadmap />} />
             <Route path="/resources" element={<Resources />} />

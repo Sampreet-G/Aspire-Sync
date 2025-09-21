@@ -142,6 +142,10 @@ export default function Quiz() {
     } else {
       const calculatedResults = calculateResults(newAnswers);
       setResults(calculatedResults);
+      
+      // Store results in localStorage for roadmap page
+      localStorage.setItem('quizResults', JSON.stringify(calculatedResults));
+      
       setQuizFinished(true);
     }
   };
@@ -152,6 +156,8 @@ export default function Quiz() {
     setQuizFinished(false);
     setAnswers([]);
     setResults(null);
+    // Clear stored results
+    localStorage.removeItem('quizResults');
   };
 
   if (!quizStarted) {
@@ -246,7 +252,7 @@ export default function Quiz() {
         <div className="options-grid">
           {currentQuestion.options.map((option, idx) => (
             <button
-              key={idx}
+              key={`${currentQuestionIndex}-${idx}`} // Add unique key to reset component state
               className="option-button"
               onClick={() => handleAnswerClick(idx)}
             >

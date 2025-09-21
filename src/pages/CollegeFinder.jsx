@@ -15,7 +15,8 @@ const allColleges = [
     rating: 4.2,
     fees: '₹15,000/year',
     affiliatedTo: 'University of Kashmir',
-    facilities: ['Library', 'Computer Lab', 'Sports Ground', 'Cafeteria']
+    facilities: ['Library', 'Computer Lab', 'Sports Ground', 'Cafeteria'],
+    naacGrade: 'B++'
   },
   {
     id: 2,
@@ -27,7 +28,8 @@ const allColleges = [
     rating: 4.0,
     fees: '₹12,000/year',
     affiliatedTo: 'University of Kashmir',
-    facilities: ['Library', 'Computer Lab', 'Auditorium']
+    facilities: ['Library', 'Computer Lab', 'Auditorium'],
+    naacGrade: 'B+'
   },
   {
     id: 3,
@@ -39,7 +41,8 @@ const allColleges = [
     rating: 4.8,
     fees: '₹2,00,000/year',
     affiliatedTo: 'Autonomous',
-    facilities: ['Research Labs', 'Hostels', 'Sports Complex', 'Medical Center']
+    facilities: ['Research Labs', 'Hostels', 'Sports Complex', 'Medical Center'],
+    naacGrade: 'A++'
   },
   {
     id: 4,
@@ -51,7 +54,8 @@ const allColleges = [
     rating: 4.1,
     fees: '₹18,000/year',
     affiliatedTo: 'University of Jammu',
-    facilities: ['Library', 'Computer Lab', 'Girls Hostel', 'Sports Ground']
+    facilities: ['Library', 'Computer Lab', 'Girls Hostel', 'Sports Ground'],
+    naacGrade: 'B++'
   },
   {
     id: 5,
@@ -63,7 +67,8 @@ const allColleges = [
     rating: 4.5,
     fees: '₹45,000/year',
     affiliatedTo: 'Autonomous',
-    facilities: ['Research Centers', 'Multiple Libraries', 'Hostels', 'Medical Facility']
+    facilities: ['Research Centers', 'Multiple Libraries', 'Hostels', 'Medical Facility'],
+    naacGrade: 'A+'
   },
   {
     id: 6,
@@ -75,7 +80,8 @@ const allColleges = [
     rating: 4.3,
     fees: '₹35,000/year',
     affiliatedTo: 'Autonomous',
-    facilities: ['Multiple Campuses', 'Research Labs', 'Sports Complex']
+    facilities: ['Multiple Campuses', 'Research Labs', 'Sports Complex'],
+    naacGrade: 'A+'
   },
   {
     id: 7,
@@ -87,7 +93,8 @@ const allColleges = [
     rating: 4.6,
     fees: '₹1,80,000/year',
     affiliatedTo: 'NIT System',
-    facilities: ['Modern Labs', 'Hostels', 'Recreation Center']
+    facilities: ['Modern Labs', 'Hostels', 'Recreation Center'],
+    naacGrade: 'A++'
   },
   {
     id: 8,
@@ -99,7 +106,100 @@ const allColleges = [
     rating: 4.7,
     fees: '₹50,000/year',
     affiliatedTo: 'Autonomous',
-    facilities: ['Teaching Hospital', 'Research Labs', 'Medical Library']
+    facilities: ['Teaching Hospital', 'Research Labs', 'Medical Library'],
+    naacGrade: 'A+'
+  },
+  // NAAC A+ Private Colleges
+  {
+    id: 9,
+    name: 'Shri Mata Vaishno Devi University',
+    city: 'Katra',
+    courses: ['B.Tech', 'MBA', 'B.Sc', 'M.Sc', 'PhD', 'Architecture'],
+    established: '1999',
+    type: 'Private University',
+    rating: 4.6,
+    fees: '₹1,20,000/year',
+    affiliatedTo: 'Autonomous',
+    facilities: ['Modern Campus', 'Research Centers', 'Hostels', 'Innovation Lab'],
+    naacGrade: 'A+'
+  },
+  {
+    id: 10,
+    name: 'Lovely Professional University - Jammu Campus',
+    city: 'Jammu',
+    courses: ['B.Tech', 'MBA', 'BBA', 'B.Com', 'M.Tech', 'Fashion Design'],
+    established: '2020',
+    type: 'Private University',
+    rating: 4.4,
+    fees: '₹1,80,000/year',
+    affiliatedTo: 'LPU Punjab',
+    facilities: ['Industry Labs', 'Placement Cell', 'Sports Complex', 'Cultural Center'],
+    naacGrade: 'A+'
+  },
+  {
+    id: 11,
+    name: 'Islamic University of Science & Technology',
+    city: 'Awantipora',
+    courses: ['B.Tech', 'MBA', 'Medical', 'Law', 'Pharmacy', 'Nursing'],
+    established: '2005',
+    type: 'Private University',
+    rating: 4.5,
+    fees: '₹95,000/year',
+    affiliatedTo: 'Autonomous',
+    facilities: ['Medical College', 'Engineering Labs', 'Library', 'Mosque'],
+    naacGrade: 'A+'
+  },
+  {
+    id: 12,
+    name: 'Central University of Kashmir',
+    city: 'Ganderbal',
+    courses: ['MBA', 'M.Sc', 'MA', 'B.A', 'PhD', 'Law'],
+    established: '2009',
+    type: 'Central University',
+    rating: 4.4,
+    fees: '₹25,000/year',
+    affiliatedTo: 'Autonomous',
+    facilities: ['Research Centers', 'Digital Library', 'Hostels', 'Auditorium'],
+    naacGrade: 'A+'
+  },
+  {
+    id: 13,
+    name: 'Baba Ghulam Shah Badshah University',
+    city: 'Rajouri',
+    courses: ['B.Tech', 'MBA', 'B.Ed', 'M.Sc', 'Law', 'Social Work'],
+    established: '2002',
+    type: 'State University',
+    rating: 4.2,
+    fees: '₹40,000/year',
+    affiliatedTo: 'Autonomous',
+    facilities: ['Multiple Campuses', 'Computer Labs', 'Library', 'Sports'],
+    naacGrade: 'A+'
+  },
+  {
+    id: 14,
+    name: 'Cluster University Srinagar',
+    city: 'Srinagar',
+    courses: ['B.Sc', 'B.Com', 'BA', 'M.Sc', 'MA', 'B.Ed'],
+    established: '2016',
+    type: 'State University',
+    rating: 4.3,
+    fees: '₹22,000/year',
+    affiliatedTo: 'Autonomous',
+    facilities: ['Multiple Colleges', 'Research Labs', 'Library Network'],
+    naacGrade: 'A+'
+  },
+  {
+    id: 15,
+    name: 'Sher-e-Kashmir University of Agricultural Sciences',
+    city: 'Srinagar',
+    courses: ['Agriculture', 'Horticulture', 'Veterinary', 'Forestry', 'Food Technology'],
+    established: '1982',
+    type: 'State University',
+    rating: 4.4,
+    fees: '₹30,000/year',
+    affiliatedTo: 'Autonomous',
+    facilities: ['Research Farms', 'Labs', 'Veterinary Hospital', 'Seed Bank'],
+    naacGrade: 'A+'
   }
 ];
 

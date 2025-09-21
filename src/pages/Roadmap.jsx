@@ -1,73 +1,278 @@
 // src/pages/Roadmap.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Roadmap.css';
 
-// Mock user data - in real app this would come from quiz results/user state
-const userData = {
-  name: "Student",
-  averageSalary: "₹8.0L",
-  jobOffers: 5,
-  growthProspect: "Good",
-  keyMetrics: 4
+// Dynamic roadmap data based on career paths
+const roadmapData = {
+  biology: {
+    userData: {
+      name: "Student",
+      averageSalary: "₹12.0L",
+      jobOffers: 6,
+      growthProspect: "Good",
+      keyMetrics: 5
+    },
+    careerJourney: {
+      currentStep: "Class 12 (Science - PCB)",
+      completedSteps: ["Complete Class 12 with Physics, Chemistry, Biology"],
+      nextSteps: [
+        {
+          phase: "NEET Preparation",
+          duration: "6-12 months",
+          description: "Prepare for NEET exam for medical college admission",
+          activities: ["Join coaching institute", "Practice mock tests", "Focus on Biology, Chemistry, Physics", "Solve previous year papers"]
+        },
+        {
+          phase: "Medical Education",
+          duration: "5.5 years (MBBS)",
+          description: "Complete MBBS degree from recognized medical college",
+          activities: ["Complete pre-clinical subjects", "Clinical rotations", "Internship program", "Specialize in preferred field"]
+        },
+        {
+          phase: "Specialization",
+          duration: "3 years (MD/MS)",
+          description: "Pursue post-graduation in specialized medical field",
+          activities: ["Choose specialization", "Complete residency", "Research work", "Clinical practice"]
+        },
+        {
+          phase: "Medical Practice",
+          duration: "Career launch",
+          description: "Start independent practice or join healthcare institutions",
+          activities: ["Medical license", "Join hospitals", "Private practice", "Continuous medical education"]
+        }
+      ]
+    },
+    skillsToevelop: [
+      { skill: "Medical Knowledge", level: 50, target: 95 },
+      { skill: "Patient Care & Empathy", level: 65, target: 90 },
+      { skill: "Clinical Decision Making", level: 40, target: 88 },
+      { skill: "Communication Skills", level: 60, target: 85 }
+    ],
+    jobRoles: [
+      "General Physician",
+      "Specialist Doctor",
+      "Surgeon",
+      "Medical Researcher",
+      "Healthcare Administrator",
+      "Public Health Officer"
+    ],
+    workEnvironments: [
+      "Hospitals & Clinics",
+      "Medical Research Centers",
+      "Healthcare Organizations",
+      "Government Health Departments"
+    ]
+  },
+  engineering: {
+    userData: {
+      name: "Student",
+      averageSalary: "₹8.0L",
+      jobOffers: 5,
+      growthProspect: "Good",
+      keyMetrics: 4
+    },
+    careerJourney: {
+      currentStep: "Class 12 (Science - PCM)",
+      completedSteps: ["Complete Class 12 with Physics, Chemistry, Mathematics"],
+      nextSteps: [
+        {
+          phase: "Entrance Preparation",
+          duration: "6-12 months",
+          description: "Prepare for JEE Main and Advanced for top engineering colleges",
+          activities: ["Join coaching institute", "Practice mock tests", "Focus on PCM subjects", "Solve previous year papers"]
+        },
+        {
+          phase: "B.Tech Admission",
+          duration: "4 years",
+          description: "Pursue Bachelor of Technology in your preferred specialization",
+          activities: ["Choose Computer Science/IT specialization", "Maintain good academics", "Build programming skills", "Participate in technical events"]
+        },
+        {
+          phase: "Skill Development",
+          duration: "Throughout degree",
+          description: "Develop industry-relevant technical and soft skills",
+          activities: ["Learn programming languages", "Work on projects", "Internships", "Participate in hackathons"]
+        },
+        {
+          phase: "Career Launch",
+          duration: "Final year",
+          description: "Secure placement or higher education opportunities",
+          activities: ["Campus placements", "Build portfolio", "Network with professionals", "Consider MS abroad"]
+        }
+      ]
+    },
+    skillsToevelop: [
+      { skill: "Analytical Skill", level: 60, target: 90 },
+      { skill: "Teamwork and collaboration", level: 45, target: 85 },
+      { skill: "Discipline", level: 70, target: 95 },
+      { skill: "Perseverance", level: 55, target: 88 }
+    ],
+    jobRoles: [
+      "Software Developer",
+      "Data Scientist",
+      "Cloud Engineer",
+      "Cybersecurity Analyst",
+      "AI/ML Engineer",
+      "Full Stack Developer"
+    ],
+    workEnvironments: [
+      "Tech and Software Companies",
+      "Research and Development Organizations",
+      "Infrastructure and Manufacturing Sector",
+      "Startups and Innovation Labs"
+    ]
+  },
+  business: {
+    userData: {
+      name: "Student",
+      averageSalary: "₹7.5L",
+      jobOffers: 4,
+      growthProspect: "Very Good",
+      keyMetrics: 4
+    },
+    careerJourney: {
+      currentStep: "Class 12 (Commerce/Any Stream)",
+      completedSteps: ["Complete Class 12 with good academic performance"],
+      nextSteps: [
+        {
+          phase: "Business Education",
+          duration: "3 years",
+          description: "Pursue Bachelor's in Business Administration or Commerce",
+          activities: ["Choose BBA/B.Com program", "Focus on business fundamentals", "Develop analytical skills", "Join business clubs"]
+        },
+        {
+          phase: "Practical Experience",
+          duration: "Throughout degree",
+          description: "Gain real-world business experience through internships",
+          activities: ["Summer internships", "Part-time jobs", "Business competitions", "Networking events"]
+        },
+        {
+          phase: "Specialization",
+          duration: "2 years (MBA/M.Com)",
+          description: "Specialize in specific business domain",
+          activities: ["Choose MBA specialization", "Case study analysis", "Industry projects", "Leadership roles"]
+        },
+        {
+          phase: "Career Launch",
+          duration: "Final year",
+          description: "Secure positions in business and corporate sectors",
+          activities: ["Campus placements", "Business plan development", "Professional certifications", "Entrepreneurship opportunities"]
+        }
+      ]
+    },
+    skillsToevelop: [
+      { skill: "Financial Analysis", level: 55, target: 88 },
+      { skill: "Communication & Presentation", level: 65, target: 92 },
+      { skill: "Strategic Thinking", level: 50, target: 85 },
+      { skill: "Leadership", level: 45, target: 90 }
+    ],
+    jobRoles: [
+      "Business Analyst",
+      "Financial Manager",
+      "Marketing Executive",
+      "Entrepreneur",
+      "Investment Banker",
+      "Management Consultant"
+    ],
+    workEnvironments: [
+      "Corporate Offices",
+      "Financial Institutions",
+      "Consulting Firms",
+      "Startups and Business Incubators"
+    ]
+  },
+  arts: {
+    userData: {
+      name: "Student",
+      averageSalary: "₹6.5L",
+      jobOffers: 3,
+      growthProspect: "Good",
+      keyMetrics: 4
+    },
+    careerJourney: {
+      currentStep: "Class 12 (Any Stream)",
+      completedSteps: ["Complete Class 12 with focus on humanities/social sciences"],
+      nextSteps: [
+        {
+          phase: "Liberal Arts Education",
+          duration: "3 years",
+          description: "Pursue Bachelor's in Arts or Humanities specialization",
+          activities: ["Choose BA specialization", "Develop writing skills", "Critical thinking", "Cultural awareness"]
+        },
+        {
+          phase: "Skill Building",
+          duration: "Throughout degree",
+          description: "Build creative and communication skills",
+          activities: ["Creative writing", "Public speaking", "Social work", "Media production"]
+        },
+        {
+          phase: "Advanced Studies",
+          duration: "2 years (MA/MSW)",
+          description: "Specialize in chosen field of humanities",
+          activities: ["Research projects", "Thesis work", "Field experience", "Teaching opportunities"]
+        },
+        {
+          phase: "Career Development",
+          duration: "Final year",
+          description: "Explore diverse career opportunities in creative and social sectors",
+          activities: ["Portfolio development", "Freelancing", "Social initiatives", "Media internships"]
+        }
+      ]
+    },
+    skillsToevelop: [
+      { skill: "Creative Writing", level: 60, target: 90 },
+      { skill: "Critical Thinking", level: 55, target: 88 },
+      { skill: "Cultural Awareness", level: 70, target: 85 },
+      { skill: "Public Speaking", level: 45, target: 82 }
+    ],
+    jobRoles: [
+      "Teacher/Professor",
+      "Journalist",
+      "Content Writer",
+      "Social Worker",
+      "Cultural Officer",
+      "Media Producer"
+    ],
+    workEnvironments: [
+      "Educational Institutions",
+      "Media Companies",
+      "Social Organizations",
+      "Government Cultural Departments"
+    ]
+  }
 };
-
-const careerJourney = {
-  currentStep: "Class 12 (Science)",
-  completedSteps: ["Complete Class 12 with Physics, Chemistry, Mathematics"],
-  nextSteps: [
-    {
-      phase: "Entrance Preparation",
-      duration: "6-12 months",
-      description: "Prepare for JEE Main and Advanced for top engineering colleges",
-      activities: ["Join coaching institute", "Practice mock tests", "Focus on PCM subjects"]
-    },
-    {
-      phase: "B.Tech Admission", 
-      duration: "4 years",
-      description: "Pursue Bachelor of Technology in your preferred specialization",
-      activities: ["Choose Computer Science/IT specialization", "Maintain good academics", "Build programming skills"]
-    },
-    {
-      phase: "Skill Development",
-      duration: "Throughout degree", 
-      description: "Develop industry-relevant technical and soft skills",
-      activities: ["Learn programming languages", "Work on projects", "Internships", "Participate in hackathons"]
-    },
-    {
-      phase: "Career Launch",
-      duration: "Final year",
-      description: "Secure placement or higher education opportunities",
-      activities: ["Campus placements", "Build portfolio", "Network with professionals", "Consider MS abroad"]
-    }
-  ]
-};
-
-const skillsToevelop = [
-  { skill: "Analytical Skill", level: 60, target: 90 },
-  { skill: "Teamwork and collaboration", level: 45, target: 85 },
-  { skill: "Discipline", level: 70, target: 95 },
-  { skill: "Perseverance", level: 55, target: 88 }
-];
-
-const jobRoles = [
-  "Software Developer",
-  "Data Scientist", 
-  "Cloud Engineer",
-  "Cybersecurity Analyst",
-  "AI/ML Engineer",
-  "Full Stack Developer"
-];
-
-const workEnvironments = [
-  "Tech and Software Companies",
-  "Research and Development Organizations", 
-  "Infrastructure and Manufacturing Sector",
-  "Startups and Innovation Labs"
-];
 
 export default function Roadmap() {
   const [activeTab, setActiveTab] = useState('journey');
+  const [careerData, setCareerData] = useState(null);
+
+  useEffect(() => {
+    // Get quiz results from localStorage
+    const storedResults = localStorage.getItem('quizResults');
+    
+    if (storedResults) {
+      const results = JSON.parse(storedResults);
+      const topCareerKey = results.topCareer.key;
+      setCareerData(roadmapData[topCareerKey] || roadmapData.engineering);
+    } else {
+      // Default to engineering if no quiz results found
+      setCareerData(roadmapData.engineering);
+    }
+  }, []);
+
+  // Show loading if data not loaded yet
+  if (!careerData) {
+    return (
+      <div className="roadmap-page">
+        <div className="journey-title">
+          <h1>Loading your personalized roadmap...</h1>
+        </div>
+      </div>
+    );
+  }
+
+  const { userData, careerJourney, skillsToevelop, jobRoles, workEnvironments } = careerData;
 
   return (
     <div className="roadmap-page">
