@@ -1,4 +1,4 @@
-# 🎓 College Finder Platform
+# 🎓 Aspire Sync
 
 A modern and interactive **College Finder Web Application** built with React, where students can explore colleges in Jammu & Kashmir, search by name, filter by city, and view details. The platform also includes an **AI-powered chatbot** to guide users with queries.
 
